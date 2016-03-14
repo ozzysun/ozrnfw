@@ -1,11 +1,24 @@
 'use strict';
-import React,{AppRegistry,Component,StyleSheet,Text,View} from 'react-native';
-// Redux stuff is optional
+import React,{Component} from 'react-native';
 import { createStore } from 'redux'
-import { Provider, connect } from 'react-redux'
+import { Provider} from 'react-redux'
+var RNRF = require('react-native-router-flux');
+var {Actions} = RNRF;
 import AppRouter from "./router";
+/*
+import rootReducer from './reducers'
+const initialState = {
+   red_player:{
+    nowIndex:0,
+    name:"ozplayer"
+   },
+   red_pageInfo:"initPageInfo" 
+ };
+*/
+let store = createStore(reducer);
+//let store = createStore(rootReducer,initialState);
+
 function reducer(state = {}, action) {
-    /*
     switch (action.type) {
         case Actions.BEFORE_ROUTE:
             //console.log("BEFORE_ROUTE:", action);
@@ -28,10 +41,8 @@ function reducer(state = {}, action) {
         default:
             return state;
     }
-    */
 
 }
-let store = createStore(reducer);
 class App extends React.Component {
   render(){
     return(

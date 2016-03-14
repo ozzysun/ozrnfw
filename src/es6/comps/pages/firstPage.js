@@ -1,5 +1,5 @@
 'use strict';
-import React,{AppRegistry,Component,StyleSheet,Text,View} from 'react-native';
+import React,{Component,StyleSheet,Text,View} from 'react-native';
 
 export default class FirstPage extends React.Component {
   render(){
@@ -7,7 +7,7 @@ export default class FirstPage extends React.Component {
     return(
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Im FirstPage
+          Im FirstPage too
         </Text>
       </View>
     )

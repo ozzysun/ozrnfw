@@ -1,17 +1,14 @@
 'use strict';
-import React,{AppRegistry,Component,StyleSheet,Text,View} from 'react-native';
+import React,{Component} from 'react-native';
+import { Provider, connect } from 'react-redux'
 
 var RNRF = require('react-native-router-flux');
 var {Route, Schema, Animations, Actions, TabBar} = RNRF;
-
-// Redux stuff is optional
-import { createStore } from 'redux'
-import { Provider, connect } from 'react-redux'
-// all page
-var FirstPage = require('./comps/pages/firstPage'); 
 const Router = connect()(RNRF.Router);
+// all page
+import FirstPage from '../comps/pages/firstPage';
 
-class APPRouter extends React.Component {
+class AppRouter extends React.Component {
   render(){
     return(
         <Router hideNavBar={true} name="root">

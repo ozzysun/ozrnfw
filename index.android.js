@@ -4,5 +4,5 @@
  */
 'use strict';
 import React,{AppRegistry,Component,StyleSheet,Text,View} from 'react-native';
-import Starter from './src/es6/Starter';
-AppRegistry.registerComponent('oz', () => Starter);
+import App from './src/es6/main/app';
+AppRegistry.registerComponent('oz', () => App);
