@@ -7,9 +7,7 @@ var {Route, Schema, Animations, Actions, TabBar} = RNRF;
 // Redux stuff is optional
 import { createStore } from 'redux'
 import { Provider, connect } from 'react-redux'
-// all page
-var FirstPage = require('../comps/pages/FirstPage'); 
-console.log(FirstPage)
+
 
 function reducer(state = {}, action) {
     switch (action.type) {
@@ -39,16 +37,44 @@ function reducer(state = {}, action) {
 let store = createStore(reducer);
 const Router = connect()(RNRF.Router);
 
-class Starter extends React.Component {
+class MyRouter extends React.Component {
   render(){
     return(
       <Provider store={store}>
         <Router hideNavBar={true} name="root">
-          <Route name="firstPage" component={FirstPage} title="FirstPage"/>
-          <Route name="launch" initial={true} component={FirstPage} wrapRouter={true} title="Launch1" hideNavBar={true}/>
         </Router>
       </Provider>
     )
   }
 }
-export default Starter
+export default class Starter extends React.Component {
+  render(){
+    console.log('in mypage router');
+    return(
+      <View style={styles.container}>
+        <Text style={styles.welcome}>
+          Im Starter1234
+        </Text>
+        
+      </View>
+    )
+  }
+}
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#F5FCFF',
+  },
+  welcome: {
+    fontSize: 20,
+    textAlign: 'center',
+    margin: 10,
+  },
+  instructions: {
+    textAlign: 'center',
+    color: '#333333',
+    marginBottom: 5,
+  },
+});
